@@ -1,0 +1,391 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "测试环境访问： http://www.tanzj_test.com/ 生产环境访问： http://www.tanzj_prod.com/",
+    "version": "1.0",
+    "title": "Swagger api 文档 demo",
+    "termsOfService": "http://www.tanzj.com/"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "demo-controller",
+      "description": "demo管理"
+    }
+  ],
+  "paths": {
+    "/demo/getDemo": {
+      "get": {
+        "tags": [
+          "demo-controller"
+        ],
+        "summary": "getDemo",
+        "description": "查询demo",
+        "operationId": "getDemoUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "accessToken",
+            "in": "header",
+            "description": "登录令牌",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "demoId",
+            "in": "query",
+            "description": "demo id",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/demo对象返回"
+            }
+          },
+          "400": {
+            "description": "参数错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "401": {
+            "description": "无访问权限",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "地址不存在",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "500": {
+            "description": "服务器内部错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          }
+        }
+      }
+    },
+    "/demo/listDemo": {
+      "post": {
+        "tags": [
+          "demo-controller"
+        ],
+        "summary": "listDemo",
+        "description": "查询demo",
+        "operationId": "listDemoUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "test1.name",
+            "in": "query",
+            "description": "名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "test1.description",
+            "in": "query",
+            "description": "描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "test2.name",
+            "in": "query",
+            "description": "名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "test2.description",
+            "in": "query",
+            "description": "描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "description": "登录令牌",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/demo分页信息"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "参数错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "401": {
+            "description": "无访问权限",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "地址不存在",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "500": {
+            "description": "服务器内部错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          }
+        }
+      }
+    },
+    "/demo/listDemo1": {
+      "post": {
+        "tags": [
+          "demo-controller"
+        ],
+        "summary": "listDemo1",
+        "description": "查询demo1",
+        "operationId": "listDemo1UsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "名称",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "in": "query",
+            "description": "描述",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "accessToken",
+            "in": "header",
+            "description": "登录令牌",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/demo分页信息"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "参数错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "401": {
+            "description": "无访问权限",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "地址不存在",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          },
+          "500": {
+            "description": "服务器内部错误",
+            "schema": {
+              "$ref": "#/definitions/api接口通用返回对象"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "PageUtil«demo对象信息»": {
+      "type": "object",
+      "properties": {
+        "currentPage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/demo对象信息"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "totalPage": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageUtil«demo对象信息»"
+    },
+    "api接口通用返回对象": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回码",
+          "allowEmptyValue": false
+        },
+        "msg": {
+          "type": "string",
+          "description": "错误信息",
+          "allowEmptyValue": false
+        },
+        "version": {
+          "type": "string",
+          "description": "api版本",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "api接口通用返回对象"
+    },
+    "demo分页信息": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回码",
+          "allowEmptyValue": false
+        },
+        "msg": {
+          "type": "string",
+          "description": "错误信息",
+          "allowEmptyValue": false
+        },
+        "result": {
+          "description": "数据列表",
+          "allowEmptyValue": false,
+          "$ref": "#/definitions/PageUtil«demo对象信息»"
+        },
+        "version": {
+          "type": "string",
+          "description": "api版本",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "demo分页信息"
+    },
+    "demo对象信息": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string",
+          "description": "地址",
+          "allowEmptyValue": false
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "创建时间",
+          "allowEmptyValue": false
+        },
+        "description": {
+          "type": "string",
+          "description": "描述",
+          "allowEmptyValue": false
+        },
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "demo id",
+          "allowEmptyValue": false
+        },
+        "name": {
+          "type": "string",
+          "description": "名称",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "demo对象信息"
+    },
+    "demo对象返回": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32",
+          "description": "返回码",
+          "allowEmptyValue": false
+        },
+        "msg": {
+          "type": "string",
+          "description": "错误信息",
+          "allowEmptyValue": false
+        },
+        "result": {
+          "description": "demo信息",
+          "allowEmptyValue": false,
+          "$ref": "#/definitions/demo对象信息"
+        },
+        "version": {
+          "type": "string",
+          "description": "api版本",
+          "allowEmptyValue": false
+        }
+      },
+      "title": "demo对象返回"
+    }
+  }
+}
